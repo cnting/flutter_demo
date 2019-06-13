@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 class MyStepper extends StatefulWidget {
+  static String routeName = '${Routes.widgetBase}/stepper';
+
   @override
   State<StatefulWidget> createState() {
     return _StepperState();

@@ -1,27 +1,24 @@
-import 'package:flutter/gestures.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_demo/home/home_demo.dart';
 import 'package:flutter_demo/home/home_layout.dart';
-import 'package:flutter_demo/layout/layout_listview.dart';
-import 'shopping.dart';
+import 'package:flutter_demo/routers/application.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  MyApp() {
+    final router = Router();
+    Routes.configureRoutes(router);
+    Application.router = router;
+  }
+
   final Map<String, WidgetBuilder> _routes = <String, WidgetBuilder>{
     Navigator.defaultRouteName: (context) => HomePage(),
-    '/listview': (context) => RandomWords(),
-    '/shopping': (context) =>
-        ShoppingList(
-          products: <Product>[
-            Product(name: 'Eggs'),
-            Product(name: 'Flour'),
-            Product(name: 'chips')
-          ],
-        ),
   };
 
   @override
@@ -84,8 +81,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       child: Scaffold(
         appBar: AppBar(
           leading: Builder(
-              builder: (context) =>
-                  IconButton(
+              builder: (context) => IconButton(
                     icon: Icon(Icons.menu),
                     onPressed: () {
                       Scaffold.of(context).openDrawer();
