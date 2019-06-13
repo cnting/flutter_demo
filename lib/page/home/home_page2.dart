@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/demo/demo_animation.dart';
-import 'package:flutter_demo/demo/demo_build_context.dart';
-import 'package:flutter_demo/demo/demo_custom.dart';
-import 'package:flutter_demo/demo/demo_inheritedwidget.dart';
-import 'package:flutter_demo/demo/demo_navigator.dart';
-import 'package:flutter_demo/demo/demo_network.dart';
-import 'package:flutter_demo/demo/demo_night_mode.dart';
-import 'package:flutter_demo/demo/demo_notification.dart';
-import 'package:flutter_demo/demo/demo_pointer.dart';
-import 'package:flutter_demo/demo/demo_scroll_controller.dart';
+import 'package:flutter_demo/page/demo/demo_animation.dart';
+import 'package:flutter_demo/page/demo/demo_build_context.dart';
+import 'package:flutter_demo/page/demo/demo_custom.dart';
+import 'package:flutter_demo/page/demo/demo_inheritedwidget.dart';
+import 'package:flutter_demo/page/demo/demo_navigator.dart';
+import 'package:flutter_demo/page/demo/demo_network.dart';
+import 'package:flutter_demo/page/demo/demo_night_mode.dart';
+import 'package:flutter_demo/page/demo/demo_notification.dart';
+import 'package:flutter_demo/page/demo/demo_pointer.dart';
+import 'package:flutter_demo/page/demo/demo_scroll_controller.dart';
 
 class HomeDemoNavigator extends StatelessWidget {
   @override

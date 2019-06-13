@@ -81,7 +81,7 @@ class MyChildWidget extends StatelessWidget{
     final MyExposingWidget widget = context.ancestorWidgetOfExactType(MyExposingWidget);
     final MyExposingState state = widget?.state;
 
-    debugPrint('===>widget:$widget,state:$state');
+    debugPrint('===>page.widget:$widget,state:$state');
 
     return Container(
       color: state==null?Colors.blue:state.color,

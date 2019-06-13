@@ -1,8 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_demo/home/home_demo.dart';
-import 'package:flutter_demo/home/home_layout.dart';
+import 'package:flutter_demo/page/home/home_page2.dart';
+import 'package:flutter_demo/page/home/home_page1.dart';
 import 'package:flutter_demo/routers/application.dart';
 import 'package:flutter_demo/routers/routers.dart';
 
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           currentIndex: _selectIndex,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.layers), title: Text('widget')),
+                icon: Icon(Icons.layers), title: Text('page.widget')),
             BottomNavigationBarItem(
                 icon: Icon(Icons.developer_mode), title: Text('实例')),
           ],

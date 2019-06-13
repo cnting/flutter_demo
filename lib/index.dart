@@ -1,5 +1,5 @@
 import 'model/widget.dart';
-import 'widget/index.dart' as widgets;
+import 'page/widget/index.dart' as widgets;
 
 class RouterList {
   List<WidgetPoint> getAllRouters() {

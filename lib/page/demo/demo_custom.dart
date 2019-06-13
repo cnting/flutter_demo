@@ -1,47 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/demo/anim/AnimationBuilder.dart';
 
 import 'anim/AnimationSet.dart';
 import 'anim/AnimationWidget.dart';
 import 'anim/Hero.dart';
 import 'anim/ScaleAnimation.dart';
+import 'custom/CircleProgressBar.dart';
+import 'custom/Gobang.dart';
+import 'custom/TurnBox.dart';
 
-class AnimationTestRoute extends StatelessWidget {
+class CustomTestRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Scrollable'),
+          title: Text('Custom'),
           bottom: TabBar(
             isScrollable: true,
             tabs: <Widget>[
               Tab(
-                text: '图片放大',
+                text: 'Turnbox',
               ),
               Tab(
-                text: 'AnimatedWidget',
+                text: '五子棋',
               ),
               Tab(
-                text: 'AnimationBuilder',
-              ),
-              Tab(
-                text: 'Hero',
-              ),
-              Tab(
-                text: '复杂动画',
+                text: '进度条',
               )
             ],
           ),
         ),
         body: TabBarView(
           children: <Widget>[
-            ScaleAnimationRoute(),
-            ScaleAnimationRoute2(),
-            ScaleAnimationRoute3(),
-            HeroRoute(),
-            StaggerDemo(),
+            TurnBoxRoute(),
+            GobangRoute(),
+            CircleProgressBarTestRoute()
           ],
         ),
       ),
