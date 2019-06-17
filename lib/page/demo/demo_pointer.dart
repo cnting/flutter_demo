@@ -1,7 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 class PointTestWidget extends StatefulWidget {
+
+  static String routeName = '${Routes.demoBase}/point';
+
   @override
   State<StatefulWidget> createState() {
     return _PointTestState();

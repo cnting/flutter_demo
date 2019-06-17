@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
-class NavigatorRoute extends StatelessWidget {
+class MyNavigator extends StatelessWidget {
+
+  static String routeName = '${Routes.demoBase}/navigator';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

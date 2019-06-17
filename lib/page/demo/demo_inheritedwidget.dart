@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 class ShareDataWidget extends InheritedWidget {
   int data; //需要在子树中共享的数据
@@ -45,14 +46,17 @@ class _TestWidgetState extends State<_TestWidget> {
   }
 }
 
-class InheritedWidgetTestRoute extends StatefulWidget {
+class MyInheritedWidget extends StatefulWidget {
+
+  static String routeName = "${Routes.demoBase}/inherited_widget";
+
   @override
   State<StatefulWidget> createState() {
     return _InheritedWidgetState();
   }
 }
 
-class _InheritedWidgetState extends State<InheritedWidgetTestRoute> {
+class _InheritedWidgetState extends State<MyInheritedWidget> {
   int count = 0;
 
   @override

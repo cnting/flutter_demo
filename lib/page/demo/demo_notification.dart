@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 //class NotificationTestRoute extends StatelessWidget {
 //  @override
@@ -11,7 +12,7 @@ import 'package:flutter/material.dart';
 //              print('开始滚动');
 //              break;
 //            case ScrollUpdateNotification:
-//              print('正在滚动');
+//              print('正在滚动,${notification.metrics.pixels}');
 //              break;
 //            case ScrollEndNotification:
 //              print('停止滚动');
@@ -45,6 +46,9 @@ import 'package:flutter/material.dart';
 //}
 
 class NotificationTestRoute extends StatefulWidget {
+
+  static String routeName = "${Routes.demoBase}/notification";
+
   @override
   State<StatefulWidget> createState() {
     return _NotificationState();

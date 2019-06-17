@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 //class BuildContextTestRoute extends StatelessWidget {
 //
@@ -45,6 +46,9 @@ import 'package:flutter/material.dart';
 //}
 
 class BuildContextTestRoute extends StatelessWidget {
+
+  static String routeName = "${Routes.demoBase}/buildcontext";
+
   @override
   Widget build(BuildContext context) {
     return MyExposingWidget();

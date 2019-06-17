@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 import 'anim/AnimationBuilder.dart';
 import 'anim/AnimationSet.dart';
@@ -7,6 +8,9 @@ import 'anim/Hero.dart';
 import 'anim/ScaleAnimation.dart';
 
 class AnimationTestRoute extends StatelessWidget {
+
+  static String routeName = '${Routes.demoBase}/animation';
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

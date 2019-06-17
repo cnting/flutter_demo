@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/model/widget.dart';
 import 'package:flutter_demo/routers/application.dart';
 import 'package:flutter_demo/routers/routers.dart';
-
+import '../widget/index.dart' as widgets;
 
 class HomeLayoutNavigator extends StatelessWidget {
-  Map<String, List<String>> category = {
-    'C': ['Chip'],
-    'S': ['SafeArea', 'Stepper']
-  };
+  Map<String, List<WidgetPoint>> category = Map<String, List<WidgetPoint>>();
+
+  HomeLayoutNavigator() {
+    widgets.widgetPoints.forEach((e) {
+      String key = e.name.substring(0, 1);
+      List<WidgetPoint> list = category[key];
+      if (list == null) {
+        list = [e];
+      } else {
+        list.add(e);
+      }
+      list.sort((a, b) => a.routeName.compareTo(b.routeName));
+      category[key] = list;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +35,7 @@ class HomeLayoutNavigator extends StatelessWidget {
 
 class _ChipsWidget extends StatelessWidget {
   final String _key;
-  final List<String> _values;
+  final List<WidgetPoint> _values;
 
   _ChipsWidget(this._key, this._values);
 
@@ -53,9 +65,17 @@ class _ChipsWidget extends StatelessWidget {
             runSpacing: 10,
             children: _values.map((e) {
               return ActionChip(
-                label: Text(e),
+                avatar: CircleAvatar(
+                  child: Text(e.name.substring(0,1)),
+                ),
+                label: Text(e.name),
                 onPressed: () {
-                  Routes.navigateToWidget(context, e);
+                  if (e.name == 'SafeArea') {
+                    Routes.navigateToWidget(context, e.routeName,
+                        wrapByParent: false);
+                  } else {
+                    Routes.navigateToWidget(context, e.routeName);
+                  }
                 },
               );
             }).toList(),

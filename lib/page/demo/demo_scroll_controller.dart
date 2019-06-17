@@ -1,7 +1,11 @@
 import 'package:english_words/english_words.dart' as prefix0;
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
-class ScrollableRoute extends StatelessWidget {
+class MyScrollController extends StatelessWidget {
+
+  static String routeName = "${Routes.demoBase}/scroll_controller";
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

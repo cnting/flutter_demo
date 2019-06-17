@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 class ThemeTestRoute extends StatefulWidget{
+
+  static String routeName = '${Routes.demoBase}/theme';
 
   @override
   State<StatefulWidget> createState() {

@@ -6,16 +6,32 @@ class MySafeArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: ListView.builder(itemBuilder: (context, index) {
-        return SizedBox(
-          height: 30,
-          child: Text(
-            'Data',
-            style: TextStyle(fontSize: 18),
+    return Stack(
+      children: <Widget>[
+//        Align(
+//          alignment: Alignment(-1, -1),
+//          child: Text('HelloHelloHelloHello'),
+//        ),
+        SafeArea(
+          child: Align(
+            alignment: Alignment(-1, -1),
+            child: Text('HelloHelloHelloHello'),
           ),
-        );
-      }),
+        ),
+        SafeArea(
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return SizedBox(
+                height: 30,
+                child: Text(
+                  'Data',
+                  style: TextStyle(fontSize: 18),
+                ),
+              );
+            },
+          ),
+        )
+      ],
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 import 'anim/AnimationSet.dart';
 import 'anim/AnimationWidget.dart';
@@ -8,7 +9,10 @@ import 'custom/CircleProgressBar.dart';
 import 'custom/Gobang.dart';
 import 'custom/TurnBox.dart';
 
-class CustomTestRoute extends StatelessWidget {
+class MyCustomPaint extends StatelessWidget {
+
+  static String routeName = '${Routes.demoBase}/custom_paint';
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

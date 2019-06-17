@@ -1,8 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/routers/routers.dart';
 
 class HttpTestRoute extends StatefulWidget {
+
+  static String routeName = '${Routes.demoBase}/http';
+
   @override
   State<StatefulWidget> createState() {
     return HttpTestState();

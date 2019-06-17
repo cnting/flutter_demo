@@ -9,4 +9,5 @@ class WidgetPoint {
       {@required this.name,
       @required this.routeName,
       @required this.buildRouter});
+
 }
