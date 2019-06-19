@@ -1,20 +1,23 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_demo/page/home/home_page2.dart';
 import 'package:flutter_demo/page/home/home_page1.dart';
+import 'package:flutter_demo/page/home/home_page2.dart';
 import 'package:flutter_demo/routers/application.dart';
 import 'package:flutter_demo/routers/routers.dart';
+import 'package:flutter_demo/util/log.dart';
 
 void main() {
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   MyApp() {
     final router = Router();
     Routes.configureRoutes(router);
     Application.router = router;
+    L.init();
   }
 
   final Map<String, WidgetBuilder> _routes = <String, WidgetBuilder>{

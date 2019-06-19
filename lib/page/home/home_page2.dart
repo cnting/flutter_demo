@@ -19,7 +19,7 @@ class _HomeDemo extends StatelessWidget {
           return ListTile(
             title: Text(items[index].name),
             onTap: () {
-              Routes.navigateToDemo(context,items[index].routeName);
+              Routes.navigateToWidget(context,items[index].routeName,wrapByParent: items[index].wrapByParent);
             },
           );
         },

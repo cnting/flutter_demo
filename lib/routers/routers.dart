@@ -43,12 +43,7 @@ class Routes {
   static void navigateToWidget(BuildContext context, String routeName,
       {bool wrapByParent = true}) {
     String params = wrapByParent ? '?wrapByParent=$wrapByParent' : '';
-    Application.router.navigateTo(
-        context, '$routeName$params',
+    Application.router.navigateTo(context, '$routeName$params',
         transition: TransitionType.inFromRight);
-  }
-
-  static void navigateToDemo(BuildContext context,String routeName){
-    Application.router.navigateTo(context, routeName);
   }
 }

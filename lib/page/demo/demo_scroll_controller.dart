@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/routers/routers.dart';
 
 class MyScrollController extends StatelessWidget {
-
   static String routeName = "${Routes.demoBase}/scroll_controller";
 
   @override
@@ -12,28 +11,27 @@ class MyScrollController extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Scrollable'),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                text: 'ScrollController',
-              ),
-              Tab(
-                text: 'Notification',
-              ),
-              Tab(
-                text: 'ScrollPhysic',
-              ),
-              Tab(
-                text: '嵌套滑动',
-              ),
-              Tab(
-                text: '嵌套滑动2',
-              )
-
-            ],
-          ),
-        ),
+            title: Text('ScrollController'),
+            bottom: TabBar(
+              isScrollable: true,
+              tabs: <Widget>[
+                Tab(
+                  text: 'ScrollController',
+                ),
+                Tab(
+                  text: 'Notification',
+                ),
+                Tab(
+                  text: 'ScrollPhysic',
+                ),
+                Tab(
+                  text: '嵌套滑动',
+                ),
+                Tab(
+                  text: '嵌套滑动2',
+                )
+              ],
+            )),
         body: TabBarView(
           children: <Widget>[
             _ScrollControllerTestRoute(),
@@ -164,7 +162,8 @@ class _ScrollPhysicsRoute extends StatelessWidget {
       physics: FixedExtentScrollPhysics(),
       children: data.map((e) {
         return Container(
-          decoration: BoxDecoration(border: Border.all(color: Colors.black,width: 1)),
+          decoration:
+              BoxDecoration(border: Border.all(color: Colors.black, width: 1)),
           child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Center(
@@ -180,22 +179,18 @@ class _ScrollPhysicsRoute extends StatelessWidget {
   }
 }
 
-class _ScrollNestRoute extends StatelessWidget{
+class _ScrollNestRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: <Widget>[
-        ListList(10,Colors.pink),
-        ListList(20,Colors.blue)
-      ],
+      children: <Widget>[ListList(10, Colors.pink), ListList(20, Colors.blue)],
     );
   }
-
 }
 
 class ListList extends StatelessWidget {
   int length = 0; //列表长度
-  Color color;//文字颜色
+  Color color; //文字颜色
 
   ListList(this.length, this.color);
 
@@ -203,27 +198,32 @@ class ListList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
         shrinkWrap: true,
-        physics:NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => Text(
-          'item. $index',
-          style: TextStyle(color: color),
-        ),
+              'item. $index',
+              style: TextStyle(color: color),
+            ),
         separatorBuilder: (context, index) => Divider(
-          color: color,
-        ),
+              color: color,
+            ),
         itemCount: length);
   }
 }
 
-class _ScrollNestRoute2 extends StatelessWidget{
+class _ScrollNestRoute2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: <Widget>[
-        SliverList(delegate: SliverChildListDelegate([ListList(10,Colors.pink)],)),
-        SliverList(delegate: SliverChildListDelegate([ListList(20,Colors.blue)],)),
+        SliverList(
+            delegate: SliverChildListDelegate(
+          [ListList(10, Colors.pink)],
+        )),
+        SliverList(
+            delegate: SliverChildListDelegate(
+          [ListList(20, Colors.blue)],
+        )),
       ],
     );
   }
 }
-

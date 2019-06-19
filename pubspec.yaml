@@ -27,11 +27,25 @@ dependencies:
 #  reorderables: ^0.2.9
   dio: ^2.1.7
   json_serializable: ^3.0.0
+  # 路由管理
   fluro: ^1.4.0
+  # 状态管理
+  scoped_model: ^1.0.1
+  # 状态管理
+  flutter_redux: ^0.5.3
+  redux: ^3.0.0
+  #log
+  fimber: ^0.3.0
+  #异步
+  async: ^2.2.0
+  rxdart: ^0.22.0
+  #状态管理
+  provider: ^3.0.0+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^1.0.0
 
 
 # For information on the generic Dart part of this file, see the

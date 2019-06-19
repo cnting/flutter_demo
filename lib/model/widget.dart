@@ -4,10 +4,12 @@ class WidgetPoint {
   String name;
   String routeName;
   WidgetBuilder buildRouter;
+  bool wrapByParent;
 
   WidgetPoint(
       {@required this.name,
       @required this.routeName,
-      @required this.buildRouter});
+      @required this.buildRouter,
+      this.wrapByParent = true});
 
 }

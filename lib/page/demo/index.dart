@@ -10,11 +10,13 @@ import 'demo_night_mode.dart';
 import 'demo_notification.dart';
 import 'demo_pointer.dart';
 import 'demo_scroll_controller.dart';
+import 'demo_state_manage.dart';
 
 List<WidgetPoint> demoPoints = [
   WidgetPoint(
       name: 'ScrollController',
       routeName: MyScrollController.routeName,
+      wrapByParent: false,
       buildRouter: (context) => MyScrollController()),
   WidgetPoint(
       name: 'Navigator',
@@ -43,13 +45,20 @@ List<WidgetPoint> demoPoints = [
   WidgetPoint(
       name: 'Animation',
       routeName: AnimationTestRoute.routeName,
+      wrapByParent: false,
       buildRouter: (context) => AnimationTestRoute()),
   WidgetPoint(
       name: 'CustomPaint',
+      wrapByParent: false,
       routeName: MyCustomPaint.routeName,
       buildRouter: (context) => MyCustomPaint()),
   WidgetPoint(
       name: 'Http',
       routeName: HttpTestRoute.routeName,
       buildRouter: (context) => HttpTestRoute()),
+  WidgetPoint(
+      name: '状态管理',
+      wrapByParent: false,
+      routeName: MyStateManageTestWidget.routeName,
+      buildRouter: (context) => MyStateManageTestWidget()),
 ];

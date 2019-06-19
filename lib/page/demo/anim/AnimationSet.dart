@@ -94,4 +94,10 @@ class _StaggerDemoState extends State<StaggerDemo>
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 }

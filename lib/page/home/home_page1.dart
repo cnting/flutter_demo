@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/model/widget.dart';
 import 'package:flutter_demo/routers/application.dart';
@@ -5,7 +7,7 @@ import 'package:flutter_demo/routers/routers.dart';
 import '../widget/index.dart' as widgets;
 
 class HomeLayoutNavigator extends StatelessWidget {
-  Map<String, List<WidgetPoint>> category = Map<String, List<WidgetPoint>>();
+  Map<String, List<WidgetPoint>> category = SplayTreeMap<String, List<WidgetPoint>>();
 
   HomeLayoutNavigator() {
     widgets.widgetPoints.forEach((e) {
@@ -16,8 +18,10 @@ class HomeLayoutNavigator extends StatelessWidget {
       } else {
         list.add(e);
       }
-      list.sort((a, b) => a.routeName.compareTo(b.routeName));
       category[key] = list;
+    });
+    category.values.forEach((value){
+      value.sort((a, b) => a.routeName.compareTo(b.routeName));
     });
   }
 
@@ -70,12 +74,8 @@ class _ChipsWidget extends StatelessWidget {
                 ),
                 label: Text(e.name),
                 onPressed: () {
-                  if (e.name == 'SafeArea') {
-                    Routes.navigateToWidget(context, e.routeName,
-                        wrapByParent: false);
-                  } else {
-                    Routes.navigateToWidget(context, e.routeName);
-                  }
+                  Routes.navigateToWidget(context, e.routeName,
+                      wrapByParent: e.wrapByParent);
                 },
               );
             }).toList(),
