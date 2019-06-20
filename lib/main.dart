@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           currentIndex: _selectIndex,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.layers), title: Text('page.widget')),
+                icon: Icon(Icons.layers), title: Text('widget')),
             BottomNavigationBarItem(
                 icon: Icon(Icons.developer_mode), title: Text('实例')),
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter_demo/model/widget.dart';
+import 'package:flutter_demo/page/widget/clip/widget_clip.dart';
 import 'package:flutter_demo/page/widget/widget_indexedstack.dart';
 import 'package:flutter_demo/page/widget/widget_safearea.dart';
 import 'package:flutter_demo/page/widget/widget_stepper.dart';
@@ -28,4 +29,9 @@ List<WidgetPoint> widgetPoints = [
       name: 'StreamBuilder',
       routeName: MyStreamBuilder.routeName,
       buildRouter: (context) => MyStreamBuilder()),
+  WidgetPoint(
+      name: 'Clip',
+      routeName: MyClip.routeName,
+      wrapByParent: false,
+      buildRouter: (context) => MyClip()),
 ];
