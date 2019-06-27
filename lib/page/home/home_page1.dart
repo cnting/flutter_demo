@@ -7,7 +7,8 @@ import 'package:flutter_demo/routers/routers.dart';
 import '../widget/index.dart' as widgets;
 
 class HomeLayoutNavigator extends StatelessWidget {
-  Map<String, List<WidgetPoint>> category = SplayTreeMap<String, List<WidgetPoint>>();
+  Map<String, List<WidgetPoint>> category =
+      SplayTreeMap<String, List<WidgetPoint>>();
 
   HomeLayoutNavigator() {
     widgets.widgetPoints.forEach((e) {
@@ -20,7 +21,7 @@ class HomeLayoutNavigator extends StatelessWidget {
       }
       category[key] = list;
     });
-    category.values.forEach((value){
+    category.values.forEach((value) {
       value.sort((a, b) => a.routeName.compareTo(b.routeName));
     });
   }
@@ -32,8 +33,10 @@ class HomeLayoutNavigator extends StatelessWidget {
       widgets.add(_ChipsWidget(_key, _values));
     });
 
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start, children: widgets);
+    return SingleChildScrollView(
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, children: widgets),
+    );
   }
 }
 
@@ -70,7 +73,7 @@ class _ChipsWidget extends StatelessWidget {
             children: _values.map((e) {
               return ActionChip(
                 avatar: CircleAvatar(
-                  child: Text(e.name.substring(0,1)),
+                  child: Text(e.name.substring(0, 1)),
                 ),
                 label: Text(e.name),
                 onPressed: () {

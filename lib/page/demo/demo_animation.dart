@@ -4,6 +4,7 @@ import 'package:flutter_demo/routers/routers.dart';
 import 'anim/AnimationBuilder.dart';
 import 'anim/AnimationSet.dart';
 import 'anim/AnimationWidget.dart';
+import 'anim/Flare.dart';
 import 'anim/Hero.dart';
 import 'anim/ScaleAnimation.dart';
 
@@ -13,7 +14,7 @@ class AnimationTestRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 5,
+        length: 6,
         child: Scaffold(
           appBar: AppBar(
             title: Text('Animation'),
@@ -35,6 +36,9 @@ class AnimationTestRoute extends StatelessWidget {
                     ),
                     Tab(
                       text: '复杂动画',
+                    ),
+                    Tab(
+                      text: 'flare',
                     )
                   ],
                 )
@@ -46,6 +50,7 @@ class AnimationTestRoute extends StatelessWidget {
               ScaleAnimationRoute3(),
               HeroRoute(),
               StaggerDemo(),
+              FlareDemo(),
             ],
           ),
         ));

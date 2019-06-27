@@ -6,6 +6,19 @@ import 'package:rxdart/rxdart.dart';
 
 void main() {
   runApp(MyApp());
+  L.init();
+  test();
+}
+
+void test() {
+  final subject = ReplaySubject<int>(maxSize: 2);
+  subject.add(1);
+//  subject.stream.listen((data) => L.d('===>11111 $data')); //可以监听到后面的事件
+
+  subject.add(2);
+//  subject.stream.listen((data) => L.d('===>22222 $data')); //可以监听到后面的事件
+  subject.add(3);
+  subject.stream.listen((data) => L.d('===>33333 $data'));
 }
 
 class MyApp extends StatelessWidget {
@@ -93,6 +106,4 @@ class _SecondScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }

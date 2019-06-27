@@ -78,7 +78,6 @@ class TopScreen extends StatelessWidget {
 class _SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    L.d('===>_SecondScreen.build ');
     return Scaffold(
       appBar: AppBar(
         title: Text('第二个页面'),

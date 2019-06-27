@@ -96,7 +96,6 @@ class __MyCustomClipState extends State<MyCustomClipPage>
     } else {
       endPercent = 1;
     }
-    L.d('===>__MyCustomClipState.autoSlide[85]: slidePercent:$slidePercent,endPercent:$endPercent');
 
     animationController = AnimationController(
         vsync: this,
@@ -107,8 +106,6 @@ class __MyCustomClipState extends State<MyCustomClipPage>
         var value = slidePercent < 0.5
             ? slidePercent - animationController.value
             : animationController.value;
-
-        L.e('===>__MyCustomClipState.autoSlide[100] value:$value');
 
         streamController.sink
             .add(DragModel(direction, value, DragState.animating));

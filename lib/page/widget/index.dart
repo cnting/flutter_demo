@@ -1,6 +1,7 @@
 import 'package:flutter_demo/model/widget.dart';
 import 'package:flutter_demo/page/widget/clip/widget_clip.dart';
 import 'package:flutter_demo/page/widget/widget_indexedstack.dart';
+import 'package:flutter_demo/page/widget/widget_refreshindicator.dart';
 import 'package:flutter_demo/page/widget/widget_safearea.dart';
 import 'package:flutter_demo/page/widget/widget_stepper.dart';
 import 'package:flutter_demo/page/widget/widget_streambuilder.dart';
@@ -34,4 +35,9 @@ List<WidgetPoint> widgetPoints = [
       routeName: MyClip.routeName,
       wrapByParent: false,
       buildRouter: (context) => MyClip()),
+  WidgetPoint(
+      name: 'RefreshIndicator',
+      routeName: MyRefreshIndicator.routeName,
+      wrapByParent: false,
+      buildRouter: (context) => MyRefreshIndicator()),
 ];

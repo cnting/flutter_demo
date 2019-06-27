@@ -41,6 +41,13 @@ dependencies:
   rxdart: ^0.22.0
   #状态管理
   provider: ^3.0.0+1
+  #动画
+  flare_flutter:
+    git:
+      url: https://github.com/2d-inc/Flare-Flutter.git
+      path: flare_flutter
+      ref: dev
+
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +70,7 @@ flutter:
   # 这里缩进很重要，不能弄错
   assets:
   - assets/images/
+  - assets/animation/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
