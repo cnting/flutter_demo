@@ -46,7 +46,10 @@ dependencies:
     git:
       url: https://github.com/2d-inc/Flare-Flutter.git
       path: flare_flutter
-      ref: dev
+      ref: stable
+
+  panache_lib:
+    path: /Users/cnting/Documents/workspace_flutter/panache_lib
 
 
 dev_dependencies:
@@ -71,6 +74,24 @@ flutter:
   assets:
   - assets/images/
   - assets/animation/
+
+  fonts:
+     - family: notosans
+       fonts:
+         - asset: assets/font/notosans_bold.ttf
+           style: normal
+           weight: 700
+     - family: notosans
+       fonts:
+         - asset: assets/font/notosans_italic.ttf
+           style: italic
+           weight: 400
+
+     - family: notosans
+       fonts:
+         - asset: assets/font/notosans_regular.ttf
+           style: normal
+           weight: 400
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

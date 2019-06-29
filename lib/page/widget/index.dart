@@ -1,5 +1,6 @@
 import 'package:flutter_demo/model/widget.dart';
 import 'package:flutter_demo/page/widget/clip/widget_clip.dart';
+import 'package:flutter_demo/page/widget/widget_backdropfilter.dart';
 import 'package:flutter_demo/page/widget/widget_indexedstack.dart';
 import 'package:flutter_demo/page/widget/widget_refreshindicator.dart';
 import 'package:flutter_demo/page/widget/widget_safearea.dart';
@@ -40,4 +41,9 @@ List<WidgetPoint> widgetPoints = [
       routeName: MyRefreshIndicator.routeName,
       wrapByParent: false,
       buildRouter: (context) => MyRefreshIndicator()),
+  WidgetPoint(
+      name: 'BackdropFilter',
+      routeName: MyBackdropFilter.routeName,
+      wrapByParent: false,
+      buildRouter: (context) => MyBackdropFilter()),
 ];

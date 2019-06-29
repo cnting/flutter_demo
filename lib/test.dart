@@ -63,85 +63,86 @@ import 'dart:math' as Math;
 //  }
 //}
 
-void main() {
-  L.init();
-  runApp(new MaterialApp(home: PositionedTiles()));
-}
+//void main() {
+//  L.init();
+//  runApp(new MaterialApp(home: PositionedTiles()));
+//}
+//
+//class PositionedTiles extends StatefulWidget {
+//  @override
+//  State<StatefulWidget> createState() => PositionedTilesState();
+//}
+//
+//class PositionedTilesState extends State<PositionedTiles> {
+//  List<Widget> tiles = [
+////    StatelessColorfulTile(),
+////    StatelessColorfulTile(),
+//    Padding(
+//      key: UniqueKey(),
+//      child: StatefulColorfulTile(),
+//      padding: EdgeInsets.all(10),
+//    ),
+//    Padding(
+//      key: UniqueKey(),
+//      padding: EdgeInsets.all(10),
+//      child: StatefulColorfulTile(),
+//    ),
+//  ];
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      body: Row(children: tiles),
+//      floatingActionButton: FloatingActionButton(
+//          child: Icon(Icons.sentiment_very_satisfied), onPressed: swapTiles),
+//    );
+//  }
+//
+//  swapTiles() {
+//    setState(() {
+//      tiles.insert(1, tiles.removeAt(0));
+//    });
+//  }
+//}
+//
+//class StatelessColorfulTile extends StatelessWidget {
+//  Color myColor = random();
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    return Container(
+//        color: myColor, child: Padding(padding: EdgeInsets.all(70.0)));
+//  }
+//}
+//
+//class StatefulColorfulTile extends StatefulWidget {
+//  StatefulColorfulTile({Key key}) : super(key: key);
+//
+//  @override
+//  State<StatefulWidget> createState() {
+//    return ColorfulTileState();
+//  }
+//}
+//
+//class ColorfulTileState extends State<StatefulColorfulTile> {
+//  Color myColor;
+//
+//  @override
+//  void initState() {
+//    super.initState();
+//    myColor = random();
+//  }
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    return Container(
+//        color: myColor,
+//        child: Padding(
+//          padding: EdgeInsets.all(70.0),
+//        ));
+//  }
+//}
+//
+//Color random() => Color((Math.Random().nextDouble() * 0xFFFFFF).toInt() << 0)
+//    .withOpacity(1.0);
 
-class PositionedTiles extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => PositionedTilesState();
-}
-
-class PositionedTilesState extends State<PositionedTiles> {
-  List<Widget> tiles = [
-//    StatelessColorfulTile(),
-//    StatelessColorfulTile(),
-    Padding(
-      key: UniqueKey(),
-      child: StatefulColorfulTile(),
-      padding: EdgeInsets.all(10),
-    ),
-    Padding(
-      key: UniqueKey(),
-      padding: EdgeInsets.all(10),
-      child: StatefulColorfulTile(),
-    ),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Row(children: tiles),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.sentiment_very_satisfied), onPressed: swapTiles),
-    );
-  }
-
-  swapTiles() {
-    setState(() {
-      tiles.insert(1, tiles.removeAt(0));
-    });
-  }
-}
-
-class StatelessColorfulTile extends StatelessWidget {
-  Color myColor = random();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        color: myColor, child: Padding(padding: EdgeInsets.all(70.0)));
-  }
-}
-
-class StatefulColorfulTile extends StatefulWidget {
-  StatefulColorfulTile({Key key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() {
-    return ColorfulTileState();
-  }
-}
-
-class ColorfulTileState extends State<StatefulColorfulTile> {
-  Color myColor;
-
-  @override
-  void initState() {
-    super.initState();
-    myColor = random();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        color: myColor,
-        child: Padding(
-          padding: EdgeInsets.all(70.0),
-        ));
-  }
-}
-
-Color random() => Color((Math.Random().nextDouble() * 0xFFFFFF).toInt() << 0)
-    .withOpacity(1.0);

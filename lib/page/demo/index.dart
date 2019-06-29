@@ -1,4 +1,5 @@
 import 'package:flutter_demo/model/widget.dart';
+import 'package:flutter_demo/page/demo/demo_two_list.dart';
 
 import 'demo_animation.dart';
 import 'demo_build_context.dart';
@@ -13,6 +14,10 @@ import 'demo_pointer.dart';
 import 'demo_scroll_controller.dart';
 
 List<WidgetPoint> demoPoints = [
+  WidgetPoint(
+      name: '横向两个listview',
+      routeName: TwoList.routeName,
+      buildRouter: (context) => TwoList()),
   WidgetPoint(
       name: '点击空白处隐藏键盘',
       routeName: HiddenKeyboardTestWidget.routeName,
