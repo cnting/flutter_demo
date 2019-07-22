@@ -52,6 +52,4 @@ class GpColors {
   static const Color appbarTextColor = Color(0xFF3B454F);
   static const Color yellowBtnTextColor = Color(0xFFFFFFFF);
 
-
-// static const Color barColor = Color(0xFF3B454F);
 }

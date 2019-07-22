@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 ///https://material.io/design/color/#color-theme-creation
-///
 final ThemeData gpTheme = ThemeData(
   dividerColor: GpColors.divider,
   primarySwatch: GpColors.primary,
-  primaryColor: GpColors.primary,
-  accentColor: GpColors.primary,
+  primaryColor: GpColors.primary[500],
+  //前景色
+  accentColor: GpColors.foregroundColor,
   brightness: Brightness.light,
   scaffoldBackgroundColor: GpColors.backgroundColor,
   backgroundColor: GpColors.backgroundColor,
@@ -17,28 +17,39 @@ final ThemeData gpTheme = ThemeData(
   disabledColor: GpColors.disableColor,
   unselectedWidgetColor: GpColors.disableColor,
   cardColor: GpColors.foregroundColor,
+  hintColor: GpColors.hintTextColor,
+  errorColor: GpColors.hintErrorTextColor,
+  bottomAppBarColor: GpColors.foregroundColor,
+  canvasColor: GpColors.backgroundColor,
+  highlightColor: GpColors.primary,
+  splashColor: Color(0x66c8c8c8),
+  //选择行颜色
+  selectedRowColor: Color(0xfff5f5f5),
+  secondaryHeaderColor: Color(0xffe3f2fd),
+
+  indicatorColor: GpColors.indicatorSelectColor,
 
   fontFamily: 'notosans',
 
   colorScheme: ColorScheme(
-    primary: GpColors.primary,
+    primary: GpColors.primary[500],
 
     //夜间模式
-    primaryVariant: GpColors.primary,
-    secondary: GpColors.secondary,
-    secondaryVariant: GpColors.secondary,
+    primaryVariant: GpColors.primary[500],
+    secondary: GpColors.secondary[500],
+    secondaryVariant: GpColors.secondary[500],
 
-    //The background color for widgets like [Card].
+    //Card背景
     surface: GpColors.foregroundColor,
     background: GpColors.backgroundColor,
-    error: Color(0xffd32f2f),
+    error: GpColors.hintErrorTextColor,
 
     //在primary位置的字的颜色
     onPrimary: GpColors.normalTextColor,
     onSecondary: GpColors.normalTextColor,
     onSurface: GpColors.normalTextColor,
     onBackground: GpColors.normalTextColor,
-    onError: GpColors.normalTextColor,
+    onError: GpColors.hintErrorTextColor,
     brightness: Brightness.light,
   ),
 
@@ -47,18 +58,19 @@ final ThemeData gpTheme = ThemeData(
       textTheme: TextTheme(
           title: TextStyle(
         color: GpColors.appbarTextColor,
-        fontSize: 18,
+        fontSize: 17,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
       )),
       color: GpColors.foregroundColor,
       actionsIconTheme: IconThemeData(color: GpColors.appbarIconColor),
-      iconTheme: IconThemeData(color: GpColors.appbarIconColor)),
+      iconTheme: IconThemeData(color: GpColors.appbarIconColor),
+      elevation: 1),
 
   tabBarTheme: TabBarTheme(
-    indicatorSize: TabBarIndicatorSize.tab,
-    indicator: UnderlineTabIndicator(
-        borderSide: BorderSide(color: GpColors.indicatorSelectColor, width: 2)),
+    indicatorSize: TabBarIndicatorSize.label,
+    // indicator: UnderlineTabIndicator(
+    //     borderSide: BorderSide(color: GpColors.indicatorSelectColor, width: 2)),
     labelColor: GpColors.normalTextColor,
     unselectedLabelColor: GpColors.normalTextColor,
   ),
@@ -104,22 +116,8 @@ final ThemeData gpTheme = ThemeData(
           width: 0.0,
           style: BorderStyle.none,
         ),
-        borderRadius: BorderRadius.all(Radius.circular(0.0)),
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
       )),
-
-
-  canvasColor: Color(0xfffafafa),
-  bottomAppBarColor: Color(0xffffffff),
-
-  highlightColor: Color(0x66bcbcbc),
-  splashColor: Color(0x66c8c8c8),
-  selectedRowColor: Color(0xfff5f5f5),
-  secondaryHeaderColor: Color(0xffe3f2fd),
-  textSelectionColor: Color(0xff90caf9),
-  textSelectionHandleColor: Color(0xff64b5f6),
-  hintColor: GpColors.hintTextColor,
-  errorColor: GpColors.hintErrorTextColor,
-
   textTheme: TextTheme(
     display4: TextStyle(
       color: GpColors.normalTextColor,
@@ -127,6 +125,7 @@ final ThemeData gpTheme = ThemeData(
       fontWeight: FontWeight.w300,
       fontStyle: FontStyle.normal,
     ),
+    //showDatePicker里的date使用
     display3: TextStyle(
       color: GpColors.normalTextColor,
       fontSize: 60.0,
@@ -145,54 +144,71 @@ final ThemeData gpTheme = ThemeData(
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
+
+    ///大标题  例如：showDatePicker里的month、year使用
     headline: TextStyle(
       color: GpColors.normalTextColor,
-      fontSize: 24.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 19.0,
+      fontWeight: FontWeight.w500,
       fontStyle: FontStyle.normal,
     ),
+
+    ///中标题  例如：AppBar.title和AlertDialog.title
     title: TextStyle(
       color: GpColors.normalTextColor,
-      fontSize: 20.0,
+      fontSize: 17.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
+
+    ///次标题  例如：ListView 中ListTile.title
     subhead: TextStyle(
       color: GpColors.normalSubTextColor,
-      fontSize: 16.0,
+      fontSize: 15.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
-    body2: TextStyle(
+
+    ///小标题
+    subtitle: TextStyle(
       color: GpColors.normalTextColor,
-      fontSize: 14.0,
+      fontSize: 13.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
+
+    ///默认
     body1: TextStyle(
       color: GpColors.normalTextColor,
       fontSize: 15.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
+
+    ///说明文字
+    body2: TextStyle(
+      color: GpColors.normalTextColor,
+      fontSize: 13.0,
+      fontWeight: FontWeight.w400,
+      fontStyle: FontStyle.normal,
+    ),
+
+    ///图表的标题栏
     caption: TextStyle(
       color: GpColors.normalTextColor,
       fontSize: 12.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
+
+    ///按钮
     button: TextStyle(
       color: GpColors.yellowBtnTextColor,
-      fontSize: 15.0,
+      fontSize: 17.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
-    subtitle: TextStyle(
-      color: GpColors.normalTextColor,
-      fontSize: 14.0,
-      fontWeight: FontWeight.w500,
-      fontStyle: FontStyle.normal,
-    ),
+
     overline: TextStyle(
       color: GpColors.normalTextColor,
       fontSize: 10.0,
@@ -200,320 +216,30 @@ final ThemeData gpTheme = ThemeData(
       fontStyle: FontStyle.normal,
     ),
   ),
-//  primaryTextTheme: TextTheme(
-//    display4: TextStyle(
-//      color: GpColors.primaryTextColor,
-//      fontSize: 96.0,
-//      fontWeight: FontWeight.w300,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    display3: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 60.0,
-//      fontWeight: FontWeight.w300,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    display2: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 48.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    display1: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 34.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    headline: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 24.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    title: TextStyle(
-//      color: GpColors.appbarTextColor,
-//      fontSize: 20.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    subhead: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    body2: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    body1: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    caption: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 12.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    button: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w500,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    subtitle: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w500,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    overline: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 10.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//  ),
-//  accentTextTheme: TextTheme(
-//    display4: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 96.0,
-//      fontWeight: FontWeight.w300,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    display3: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 60.0,
-//      fontWeight: FontWeight.w300,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    display2: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 48.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    display1: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 34.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    headline: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 24.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    title: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 20.0,
-//      fontWeight: FontWeight.w500,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    subhead: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    body2: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    body1: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    caption: TextStyle(
-//      color: Color(0xb3ffffff),
-//      fontSize: 12.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    button: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w500,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    subtitle: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w500,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    overline: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 10.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//  ),
-
-///slider
-//  sliderTheme: SliderThemeData(
-//    activeTrackColor: Color(0xff2196f3),
-//    inactiveTrackColor: Color(0x3d2196f3),
-//    disabledActiveTrackColor: Color(0x521976d2),
-//    disabledInactiveTrackColor: Color(0x1f1976d2),
-//    activeTickMarkColor: Color(0x8abbdefb),
-//    inactiveTickMarkColor: Color(0x8a2196f3),
-//    disabledActiveTickMarkColor: Color(0x1fbbdefb),
-//    disabledInactiveTickMarkColor: Color(0x1f1976d2),
-//    thumbColor: Color(0xff2196f3),
-//    disabledThumbColor: Color(0x521976d2),
-//    thumbShape: RoundSliderThumbShape(),
-//    overlayColor: Color(0x292196f3),
-//    valueIndicatorColor: Color(0xff2196f3),
-//    valueIndicatorShape: PaddleSliderValueIndicatorShape(),
-//    showValueIndicator: ShowValueIndicator.onlyForDiscrete,
-//    valueIndicatorTextStyle: TextStyle(
-//      color: Color(0xffffffff),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//  ),
-///chip
-//  chipTheme: ChipThemeData(
-//    backgroundColor: Color(0x1f000000),
-//    brightness: Brightness.light,
-//    deleteIconColor: Color(0xde000000),
-//    disabledColor: Color(0x0c000000),
-//    labelPadding: EdgeInsets.only(top: 0.0, bottom: 0.0, left: 8.0, right: 8.0),
-//    labelStyle: TextStyle(
-//      color: Color(0xde000000),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    padding: EdgeInsets.only(top: 4.0, bottom: 4.0, left: 4.0, right: 4.0),
-//    secondaryLabelStyle: TextStyle(
-//      color: Color(0x3d000000),
-//      fontSize: 14.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    secondarySelectedColor: Color(0x3d2196f3),
-//    selectedColor: Color(0x3d000000),
-//    shape: StadiumBorder(
-//        side: BorderSide(
-//      color: Color(0xff000000),
-//      width: 0.0,
-//      style: BorderStyle.none,
-//    )),
-//  ),
-
 );
-///input
-//  inputDecorationTheme: InputDecorationTheme(
-//    labelStyle: TextStyle(
-//      color: Color(0xdd000000),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    helperStyle: TextStyle(
-//      color: Color(0xdd000000),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    hintStyle: TextStyle(
-//      color: Color(0xdd000000),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    errorStyle: TextStyle(
-//      color: Color(0xdd000000),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    errorMaxLines: null,
-//    hasFloatingPlaceholder: true,
-//    isDense: false,
-//    contentPadding:
-//    EdgeInsets.only(top: 12.0, bottom: 12.0, left: 0.0, right: 0.0),
-//    isCollapsed: false,
-//    prefixStyle: TextStyle(
-//      color: Color(0xdd000000),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    suffixStyle: TextStyle(
-//      color: Color(0xdd000000),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    counterStyle: TextStyle(
-//      color: Color(0xdd000000),
-//      fontSize: 16.0,
-//      fontWeight: FontWeight.w400,
-//      fontStyle: FontStyle.normal,
-//    ),
-//    filled: false,
-//    fillColor: Color(0x00000000),
-//    errorBorder: UnderlineInputBorder(
-//      borderSide: BorderSide(
-//        color: Color(0xff000000),
-//        width: 1.0,
-//        style: BorderStyle.solid,
-//      ),
-//      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-//    ),
-//    focusedBorder: UnderlineInputBorder(
-//      borderSide: BorderSide(
-//        color: Color(0xff000000),
-//        width: 1.0,
-//        style: BorderStyle.solid,
-//      ),
-//      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-//    ),
-//    focusedErrorBorder: UnderlineInputBorder(
-//      borderSide: BorderSide(
-//        color: Color(0xff000000),
-//        width: 1.0,
-//        style: BorderStyle.solid,
-//      ),
-//      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-//    ),
-//    disabledBorder: UnderlineInputBorder(
-//      borderSide: BorderSide(
-//        color: Color(0xff000000),
-//        width: 1.0,
-//        style: BorderStyle.solid,
-//      ),
-//      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-//    ),
-//    enabledBorder: UnderlineInputBorder(
-//      borderSide: BorderSide(
-//        color: Color(0xff000000),
-//        width: 1.0,
-//        style: BorderStyle.solid,
-//      ),
-//      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-//    ),
-//    border: UnderlineInputBorder(
-//      borderSide: BorderSide(
-//        color: Color(0xff000000),
-//        width: 1.0,
-//        style: BorderStyle.solid,
-//      ),
-//      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-//    ),
-//  ),
+
+class GpOtherTheme {
+  ///中标题灰色
+  static TextStyle titleGrey(BuildContext context) {
+    return Theme.of(context)
+        .textTheme
+        .title
+        .copyWith(color: GpColors.hintTextColor);
+  }
+
+  ///次标题灰色
+  static TextStyle subheadGrey(BuildContext context) {
+    return Theme.of(context)
+        .textTheme
+        .subhead
+        .copyWith(color: GpColors.hintTextColor);
+  }
+
+  ///小标题灰色
+  static TextStyle subtitlGrey(BuildContext context) {
+    return Theme.of(context)
+        .textTheme
+        .subtitle
+        .copyWith(color: GpColors.hintTextColor);
+  }
+}

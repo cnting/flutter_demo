@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/routers/routers.dart';
 
 class MyIndexedStack extends StatefulWidget {
-
   static String routeName = '${Routes.widgetBase}/indexedstack';
 
   @override
@@ -16,48 +15,63 @@ class _MyIndexedStackState extends State<MyIndexedStack> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+//    return Column(
+//      children: <Widget>[
+//        RaisedButton(
+//          child: Text('$curIndex,点击切换'),
+//          onPressed: () {
+//            setState(() {
+//              curIndex = (++curIndex) % 5;
+//            });
+//          },
+//        ),
+//        IndexedStack(
+//          index: curIndex,
+//          children: <Widget>[
+//            Icon(
+//              Icons.update,
+//              size: 40.0,
+//              color: Color(0xffe91e63),
+//            ),
+//            Icon(
+//              Icons.access_alarm,
+//              size: 40.0,
+//              color: Color(0xffe91e63),
+//            ),
+//            Icon(
+//              Icons.add_alarm,
+//              size: 40.0,
+//              color: Color(0xffe91e63),
+//            ),
+//            Icon(
+//              Icons.access_time,
+//              size: 40.0,
+//              color: Color(0xffe91e63),
+//            ),
+//            Icon(
+//              Icons.alarm_off,
+//              size: 40.0,
+//              color: Color(0xffe91e63),
+//            ),
+//          ],
+//        )
+//      ],
+//    );
+    return Stack(
       children: <Widget>[
-        RaisedButton(
-          child: Text('$curIndex,点击切换'),
-          onPressed: () {
-            setState(() {
-              curIndex = (++curIndex) % 5;
-            });
-          },
+        Container(
+          color: Colors.red,
         ),
-        IndexedStack(
-          index: curIndex,
-          children: <Widget>[
-            Icon(
-              Icons.update,
-              size: 40.0,
-              color: Color(0xffe91e63),
-            ),
-            Icon(
-              Icons.access_alarm,
-              size: 40.0,
-              color: Color(0xffe91e63),
-            ),
-            Icon(
-              Icons.add_alarm,
-              size: 40.0,
-              color: Color(0xffe91e63),
-            ),
-            Icon(
-              Icons.access_time,
-              size: 40.0,
-              color: Color(0xffe91e63),
-            ),
-            Icon(
-              Icons.alarm_off,
-              size: 40.0,
-              color: Color(0xffe91e63),
-            ),
-          ],
+        Positioned(
+          bottom: 10,
+          left: 10,
+          right: 10,
+          child: RaisedButton(
+            child: Text('的点点滴滴'),
+            onPressed: () {},
+          ),
         )
       ],
     );
-
   }
 }

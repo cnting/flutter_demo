@@ -3,6 +3,7 @@ import 'package:flutter_demo/page/demo/demo_two_list.dart';
 
 import 'demo_animation.dart';
 import 'demo_build_context.dart';
+import 'demo_column_two_container.dart';
 import 'demo_custom.dart';
 import 'demo_hidden_keyboard.dart';
 import 'demo_inheritedwidget.dart';
@@ -14,6 +15,10 @@ import 'demo_pointer.dart';
 import 'demo_scroll_controller.dart';
 
 List<WidgetPoint> demoPoints = [
+  WidgetPoint(
+      name: 'Column中第二个Container充满',
+      routeName: TwoContainer.routeName,
+      buildRouter: (context) => TwoContainer()),
   WidgetPoint(
       name: '横向两个listview',
       routeName: TwoList.routeName,
