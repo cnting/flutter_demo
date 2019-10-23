@@ -40,6 +40,11 @@ class _MyDraggableState extends State<MyDraggable> {
                     _items1.add(data);
                   });
                 },
+                onLeave: (String data) {
+                  setState(() {
+                    _items1.remove(data);
+                  });
+                },
               )),
         ),
         SizedBox(
@@ -59,11 +64,19 @@ class _MyDraggableState extends State<MyDraggable> {
                   return _createGridView(_items2, Colors.pink[300]);
                 },
                 onWillAccept: (data) {
+                  print('===>onWillAccept');
                   return !_items2.contains(data);
                 },
                 onAccept: (String data) {
+                  print('===>onAccept');
                   setState(() {
                     _items2.add(data);
+                  });
+                },
+                onLeave: (String data) {
+                  print('===>onLeave');
+                  setState(() {
+                    _items2.remove(data);
                   });
                 },
               )),
@@ -87,10 +100,11 @@ class _MyDraggableState extends State<MyDraggable> {
       );
       children.add(Draggable<String>(
         onDragCompleted: () {
+          print('===>onDragCompleted');
           // 在拖动结束后删除数据
-          setState(() {
-            _items.removeAt(index);
-          });
+//          setState(() {
+//            _items.removeAt(index);
+//          });
         },
         childWhenDragging: Opacity(
           opacity: 0.5,

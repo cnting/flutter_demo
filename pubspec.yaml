@@ -37,16 +37,17 @@ dependencies:
   #log
   fimber: ^0.3.0
   #异步
-  async: ^2.2.0
+  async: ^2.1.0
   rxdart: ^0.22.0
   #状态管理
   provider: ^3.0.0+1
   #动画
-  flare_flutter:
-    git:
-      url: https://github.com/2d-inc/Flare-Flutter.git
-      path: flare_flutter
-      ref: stable
+  flare_flutter: ^1.5.4
+  #视频
+  video_player: ^0.10.1+6
+  #对video_player进行包装，增加一些功能
+  chewie: ^0.9.7
+  webview_flutter: ^0.3.13
 
   panache_lib:
     path: /Users/cnting/Documents/workspace_flutter/panache_lib

@@ -4,12 +4,17 @@ import 'package:flutter_demo/page/widget/widget_backdropfilter.dart';
 import 'package:flutter_demo/page/widget/widget_draggable.dart';
 import 'package:flutter_demo/page/widget/widget_indexedstack.dart';
 import 'package:flutter_demo/page/widget/widget_ink.dart';
+import 'package:flutter_demo/page/widget/widget_intrinsicwidth.dart';
+import 'package:flutter_demo/page/widget/widget_nestedscrollview.dart';
 import 'package:flutter_demo/page/widget/widget_overlay.dart';
 import 'package:flutter_demo/page/widget/widget_refreshindicator.dart';
 import 'package:flutter_demo/page/widget/widget_reorderablelistview.dart';
 import 'package:flutter_demo/page/widget/widget_safearea.dart';
+import 'package:flutter_demo/page/widget/widget_shadermask.dart';
+import 'package:flutter_demo/page/widget/widget_sliver.dart';
 import 'package:flutter_demo/page/widget/widget_stepper.dart';
 import 'package:flutter_demo/page/widget/widget_streambuilder.dart';
+import 'package:flutter_demo/page/widget/widget_webview.dart';
 
 import 'widget_futurebuilder.dart';
 
@@ -66,4 +71,27 @@ List<WidgetPoint> widgetPoints = [
       name: 'Ink',
       routeName: MyInk.routeName,
       buildRouter: (context) => MyInk()),
+  WidgetPoint(
+      name: 'NestedScrollView',
+      wrapByParent: false,
+      routeName: MyNestedScrollView.routeName,
+      buildRouter: (context) => MyNestedScrollView()),
+  WidgetPoint(
+      name: 'Sliver',
+      routeName: MySliver.routeName,
+      buildRouter: (context) => MySliver()),
+  WidgetPoint(
+      name: 'IntrinsicWidth',
+      routeName: MyIntrinsicWidth.routeName,
+      buildRouter: (context) => MyIntrinsicWidth()),
+  WidgetPoint(
+      name: 'WebView',
+      routeName: MyWebView.routeName,
+      buildRouter: (context) => MyWebView(),
+      wrapByParent: false),
+  WidgetPoint(
+    name: 'ShaderMask',
+    routeName: MyShaderMask.routeName,
+    buildRouter: (context) => MyShaderMask(),
+  ),
 ];
