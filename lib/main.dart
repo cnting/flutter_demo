@@ -1,8 +1,9 @@
-import 'dart:isolate';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/provider.dart';
-import 'package:flutter_demo/single_child_render_object2.dart';
+
+import 'provider/consumer/inherited_context_read.dart';
+import 'provider/consumer/inherited_context_selector.dart';
+import 'provider/consumer/inherited_context_watch.dart';
+import 'provider/consumer/selector.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: TestProvider(),
+      body: InheritedContextSelectExample(),
     );
   }
 }
